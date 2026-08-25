@@ -63,6 +63,7 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+set number
 set relativenumber
 set undofile
 
@@ -165,5 +166,8 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
+
+" Search for selection
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 au VimEnter NERD_tree_1 enew | execute 'NERDTree '.argv()[0]
